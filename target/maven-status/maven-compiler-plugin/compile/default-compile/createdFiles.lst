@@ -1,0 +1,8 @@
+com\niit\collaboration\rest\services\UserRestController.class
+com\niit\collaboration\rest\services\ChatRestController.class
+com\niit\collaboration\rest\services\LoginRestController.class
+com\niit\collaboration\rest\services\JobRestController.class
+com\niit\collaboration\rest\services\BlogRestController.class
+com\niit\collaboration\rest\services\ForumRestController.class
+com\niit\collaboration\rest\services\FriendRestController.class
+com\niit\collaboration\rest\services\ForumCommentRestController.class
