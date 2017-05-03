@@ -1,8 +1,8 @@
-com\niit\collaboration\rest\services\UserRestController.class
-com\niit\collaboration\rest\services\ChatRestController.class
-com\niit\collaboration\rest\services\LoginRestController.class
-com\niit\collaboration\rest\services\JobRestController.class
-com\niit\collaboration\rest\services\BlogRestController.class
-com\niit\collaboration\rest\services\ForumRestController.class
-com\niit\collaboration\rest\services\FriendRestController.class
-com\niit\collaboration\rest\services\ForumCommentRestController.class
+com\niit\uniteup\rest\services\ForumCommentRestController.class
+com\niit\uniteup\rest\services\FriendRestController.class
+com\niit\uniteup\rest\services\BlogRestController.class
+com\niit\uniteup\rest\services\JobRestController.class
+com\niit\uniteup\rest\services\UserRestController.class
+com\niit\uniteup\rest\services\ForumRestController.class
+com\niit\uniteup\rest\services\LoginRestController.class
+com\niit\uniteup\rest\services\ChatRestController.class
