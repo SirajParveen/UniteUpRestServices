@@ -54,9 +54,9 @@ public class UserRestController {
 	public void ImageUpload(@RequestBody MultipartFile file, HttpSession session) throws IOException {
 
 		String username = (String) session
-				.getAttribute("username"); /* Get Logged in Username */
+				.getAttribute("username"); // Get Logged in Username 
 		User User = userDAO
-				.profileof(username); /* Get user object based on username */
+				.profileof(username); // Get user object based on username 
 		System.out.println(file.getContentType() + '\n' + file.getName() + '\n' + file.getSize() + '\n'
 				+ file.getOriginalFilename());
 		User.setImage(file.getBytes());
