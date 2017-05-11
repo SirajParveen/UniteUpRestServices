@@ -74,7 +74,8 @@ public class UsersRestController {
 	@GetMapping("/nonfriends")
 	public ResponseEntity<List<Users>> nonfriends(HttpSession session) {
 		int uid = (Integer) session.getAttribute("uid");
-		List<Users> nonfriends = usersDAO.nonfriends(uid);
+		String username= (String) session.getAttribute("username");
+		List<Users> nonfriends = usersDAO.nonfriends(uid, username);
 		return new ResponseEntity<List<Users>>(nonfriends, HttpStatus.OK);
 	}
 
