@@ -1,6 +1,5 @@
 package com.niit.uniteup.rest.services;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.niit.uniteup.dao.UsersDAO;
 import com.niit.uniteup.model.Users;
 
@@ -51,18 +48,18 @@ public class UsersRestController {
 		return new ResponseEntity<Users>(oneuser, HttpStatus.OK);
 	}
 
-	@PostMapping("/imageUpload")
+	/*@PostMapping("/imageUpload")
 	public void ImageUpload(@RequestBody MultipartFile file, HttpSession session) throws IOException {
 
 		String username = (String) session
-				.getAttribute("username"); /* Get Logged in Username */
+				.getAttribute("username");  Get Logged in Username 
 		Users users = usersDAO
-				.profileof(username); /* Get user object based on username */
+				.profileof(username);  Get user object based on username 
 		System.out.println(file.getContentType() + '\n' + file.getName() + '\n' + file.getSize() + '\n'
 				+ file.getOriginalFilename());
-		users.setImage(file.getBytes());
+		users.setImage(file);
 		usersDAO.saveOrUpdate(users);
-	}
+	}*/
 
 	@GetMapping("/profileimage")
 	public ResponseEntity<Users> profileimage(HttpSession session) {
@@ -74,14 +71,14 @@ public class UsersRestController {
 	@GetMapping("/nonfriends")
 	public ResponseEntity<List<Users>> nonfriends(HttpSession session) {
 		int uid = (Integer) session.getAttribute("uid");
-		String username= (String) session.getAttribute("username");
-		List<Users> nonfriends = usersDAO.nonfriends(uid, username);
+		String username = (String) session.getAttribute("username");
+		List<Users> nonfriends = usersDAO.nonfriends(uid,username);
 		return new ResponseEntity<List<Users>>(nonfriends, HttpStatus.OK);
 	}
 
 	@GetMapping("/hello")
 	public  String sayhello()
 	{
-		return ("hello i am mukesh");
+		return ("hello i am siraj");
 	}
 }

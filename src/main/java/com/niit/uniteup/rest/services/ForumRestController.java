@@ -23,6 +23,7 @@ public class ForumRestController {
 
 	@Autowired
 	ForumDAO forumDAO;
+	
 	@PostMapping("/createforum")
 	public ResponseEntity<Forum> createforum(@RequestBody Forum forum,HttpSession session){
 		System.out.println("hello");

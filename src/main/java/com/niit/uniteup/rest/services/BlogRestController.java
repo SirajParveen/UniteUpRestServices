@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.niit.uniteup.dao.BlogDAO;
 import com.niit.uniteup.dao.BlogLikesDAO;
@@ -115,5 +116,13 @@ public class BlogRestController {
 		blog.setStatus("r");
 		blogDAO.saveOrUpdate(blog);
 		return new ResponseEntity<Blog>(HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/editblog/{blogid}/{title}/{content}")
+	public ResponseEntity<Blog> editblog(Blog blog, @PathVariable("blogid") int blogid, @PathVariable("title") String title, @PathVariable("content") String content, RedirectAttributes attributes) {
+		System.err.println("blogid"+blogid+title+content);
+	    /* blogDAO.get(blogid);*/
+	     attributes.addFlashAttribute("category", this.blogDAO.get(blogid));
+		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 	}
 }

@@ -1,6 +1,7 @@
 com\niit\uniteup\rest\services\ForumCommentRestController.class
 com\niit\uniteup\rest\services\FriendRestController.class
 com\niit\uniteup\rest\services\BlogRestController.class
+com\niit\uniteup\rest\services\EventRestController.class
 com\niit\uniteup\rest\services\JobRestController.class
 com\niit\uniteup\rest\services\ForumRestController.class
 com\niit\uniteup\rest\services\LoginRestController.class
