@@ -77,7 +77,6 @@ public class BlogRestController {
 	public ResponseEntity<Blog> likeblog(BlogLikes blogLikes, @PathVariable("blogid") int blogid, HttpSession session) {
 		int uid = (Integer) session.getAttribute("uid");
 		System.err.println("uid is="+session.getAttribute("uid"));
-		//String uid2 = (String) session.getAttribute("uid");
 		blogLikes.setBlogid(blogid);
 		blogLikes.setUserid(uid);
 		System.err.println("user Id: "+uid);
@@ -121,7 +120,6 @@ public class BlogRestController {
 	@GetMapping(value = "/editblog/{blogid}/{title}/{content}")
 	public ResponseEntity<Blog> editblog(Blog blog, @PathVariable("blogid") int blogid, @PathVariable("title") String title, @PathVariable("content") String content, RedirectAttributes attributes) {
 		System.err.println("blogid"+blogid+title+content);
-	    /* blogDAO.get(blogid);*/
 	     attributes.addFlashAttribute("category", this.blogDAO.get(blogid));
 		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 	}

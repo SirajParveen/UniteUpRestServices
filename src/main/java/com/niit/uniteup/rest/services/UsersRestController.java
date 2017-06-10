@@ -19,9 +19,6 @@ public class UsersRestController {
 
 	@Autowired
 	private UsersDAO usersDAO;
-	
-	/*@Autowired
-	private Users users;*/
 
 	@PostMapping(value = "/register")
 	public ResponseEntity<Users> adduser(@RequestBody Users users) {
@@ -30,7 +27,6 @@ public class UsersRestController {
 		users.setIsonline('N');
 		usersDAO.saveOrUpdate(users);
 		return new ResponseEntity<Users>(users, HttpStatus.OK);
-
 	}
 
 	@GetMapping(value = "/users")
@@ -48,19 +44,6 @@ public class UsersRestController {
 		return new ResponseEntity<Users>(oneuser, HttpStatus.OK);
 	}
 
-	/*@PostMapping("/imageUpload")
-	public void ImageUpload(@RequestBody MultipartFile file, HttpSession session) throws IOException {
-
-		String username = (String) session
-				.getAttribute("username");  Get Logged in Username 
-		Users users = usersDAO
-				.profileof(username);  Get user object based on username 
-		System.out.println(file.getContentType() + '\n' + file.getName() + '\n' + file.getSize() + '\n'
-				+ file.getOriginalFilename());
-		users.setImage(file);
-		usersDAO.saveOrUpdate(users);
-	}*/
-
 	@GetMapping("/profileimage")
 	public ResponseEntity<Users> profileimage(HttpSession session) {
 		int uid = (Integer) session.getAttribute("uid");
@@ -77,7 +60,7 @@ public class UsersRestController {
 	}
 
 	@GetMapping("/hello")
-	public  String sayhello()
+	public String sayhello()
 	{
 		return ("hello i am siraj");
 	}
